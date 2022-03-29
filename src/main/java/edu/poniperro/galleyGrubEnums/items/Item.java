@@ -60,4 +60,4 @@ package edu.poniperro.galleyGrubEnums.items;
             return this.name.hashCode();
         }
     }
-}
+
