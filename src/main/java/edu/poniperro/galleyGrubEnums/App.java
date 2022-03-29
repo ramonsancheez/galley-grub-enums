@@ -1,11 +1,13 @@
 package edu.poniperro.galleyGrubEnums;
 
-
+import edu.poniperro.galleyGrubEnums.extras.*;
 import edu.poniperro.galleyGrubEnums.items.Item;
 import edu.poniperro.galleyGrubEnums.items.Prices;
 import edu.poniperro.galleyGrubEnums.items.Product;
 import edu.poniperro.galleyGrubEnums.order.Comanda;
 import edu.poniperro.galleyGrubEnums.order.Order;
+import edu.poniperro.galleyGrubEnums.receipt.Receipt;
+import edu.poniperro.galleyGrubEnums.receipt.Ticket;
 
 /**
  *
@@ -190,28 +192,27 @@ public class App
          * El precio total de la comanda se guarda en Order.
          */
 
-//        Extra regular = new Regular(); // suma el precio base
-//        Extra cheese = new CheeseExtra(); // suma el precio del extra cheese
-//        Extra sauce = new SauceExtra(); // suma el precio de sauce
-//        Extra size = new SizeLargeExtra(); // suma el precio del tamanho Large
+        Extra regular = new Regular(); // suma el precio base
+        Extra cheese = new Cheese(); // suma el precio del extra cheese
+        Extra sauce = new SauceExtra(); // suma el precio de sauce
+        Extra size = new SizeLargeExtra(); // suma el precio del tamanho Large
 
-//        regular.setNextExtra(cheese);
-//        cheese.setNextExtra(sauce);
-//        sauce.setNextExtra(size);
+       regular.setNextExtra(cheese);
+        cheese.setNextExtra(sauce);
+        sauce.setNextExtra(size);
 
-//        /**
-//         * Squidward Tentacles genera el recibo,
-//         * la app calcula el importe total de la comanda
-//         * y lo muestra en pantalla.
-//         */
-//
-//        System.out.print("\n\t --- PRINTIG RECEIPT BIPBIPBIP ---  \n");
-//
-//        Ticket receiptExtra = new Receipt(order);
-//        receiptExtra.setChain(regular);
-//
-//        receiptExtra.total();
-//        receiptExtra.print();
+        /**
+         * Squidward Tentacles genera el recibo,
+         * la app calcula el importe total de la comanda
+         * y lo muestra en pantalla.
+         */
+
+        System.out.print("\n\t --- PRINTIG RECEIPT BIPBIPBIP ---  \n");
+        Ticket receiptExtra = new Receipt(order);
+        receiptExtra.setChain(regular);
+
+        receiptExtra.total();
+        receiptExtra.print();
     }
 
     public static void display(Product item) {
